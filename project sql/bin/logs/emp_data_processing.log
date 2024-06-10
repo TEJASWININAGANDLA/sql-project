@@ -1,0 +1,240 @@
+2024-06-10 15:32:29,286 - INFO - Snowflake Connector for Python Version: 2.7.4, Python Version: 3.6.7, Platform: Windows-10-10.0.22621-SP0
+2024-06-10 15:32:29,286 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-06-10 15:32:29,286 - INFO - Setting use_openssl_only mode to False
+2024-06-10 15:32:30,541 - INFO - Connected to Snowflake successfully.
+2024-06-10 15:32:30,541 - INFO - query: [CREATE SCHEMA IF NOT EXISTS EMP_PROC]
+2024-06-10 15:32:30,696 - INFO - query execution done
+2024-06-10 15:32:30,696 - INFO - Executed query: CREATE SCHEMA IF NOT EXISTS EMP_PROC
+2024-06-10 15:32:30,696 - INFO - query: [USE SCHEMA EMP_PROC]
+2024-06-10 15:32:30,836 - INFO - query execution done
+2024-06-10 15:32:30,836 - INFO - query: [CREATE OR REPLACE TABLE emp_sal_greater_mngr AS SELECT e1.essn, e1.salary, e1.su...]
+2024-06-10 15:32:31,966 - INFO - query execution done
+2024-06-10 15:32:31,966 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_sal_greater_mngr AS
+                SELECT e1.essn, e1.salary, e1.super_ssn, e2.salary AS mgr_salary
+                FROM EMP_RAW.EMPLOYEE e1
+                JOIN EMP_RAW.EMPLOYEE e2 ON e1.super_ssn = e2.essn
+                WHERE e1.salary > e2.salary;
+            
+2024-06-10 15:32:31,966 - INFO - query: [SELECT * FROM emp_sal_greater_mngr]
+2024-06-10 15:32:32,407 - INFO - query execution done
+2024-06-10 15:32:32,407 - INFO - Executed query: SELECT * FROM emp_sal_greater_mngr
+2024-06-10 15:32:32,407 - INFO - Report generated: emp_sal_greater_mngr.txt
+2024-06-10 15:32:32,407 - INFO - query: [CREATE OR REPLACE TABLE emp_project_dept AS SELECT e.essn, p.pname, d1.dname AS ...]
+2024-06-10 15:32:33,837 - INFO - query execution done
+2024-06-10 15:32:33,837 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_project_dept AS
+                SELECT e.essn, p.pname, d1.dname AS emp_dept_name, d2.dname AS proj_dept_name
+                FROM EMP_RAW.EMPLOYEE e
+                JOIN EMP_RAW.DEPARTMENT d1 ON e.dno = d1.dnumber
+                JOIN EMP_RAW.WORKS_ON w ON e.essn = w.essn
+                JOIN EMP_RAW.PROJECT p ON w.pno = p.pnumber
+                JOIN EMP_RAW.DEPARTMENT d2 ON p.dnum = d2.dnumber
+                WHERE e.dno != p.dnum;
+            
+2024-06-10 15:32:33,837 - INFO - query: [SELECT * FROM emp_project_dept]
+2024-06-10 15:32:34,186 - INFO - query execution done
+2024-06-10 15:32:34,186 - INFO - Executed query: SELECT * FROM emp_project_dept
+2024-06-10 15:32:34,186 - INFO - Report generated: emp_project_dept.txt
+2024-06-10 15:32:34,186 - INFO - query: [CREATE OR REPLACE TABLE emp_dept_least AS SELECT d.dname, d.dnumber, COUNT(e.ess...]
+2024-06-10 15:32:34,816 - INFO - query execution done
+2024-06-10 15:32:34,816 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_dept_least AS
+                SELECT d.dname, d.dnumber, COUNT(e.essn) AS no_of_emp
+                FROM EMP_RAW.DEPARTMENT d
+                LEFT JOIN EMP_RAW.EMPLOYEE e ON d.dnumber = e.dno
+                GROUP BY d.dname, d.dnumber
+                ORDER BY no_of_emp ASC
+                LIMIT 1;
+            
+2024-06-10 15:32:34,816 - INFO - query: [SELECT * FROM emp_dept_least]
+2024-06-10 15:32:34,938 - INFO - query execution done
+2024-06-10 15:32:34,938 - INFO - Executed query: SELECT * FROM emp_dept_least
+2024-06-10 15:32:34,946 - INFO - Report generated: emp_dept_least.txt
+2024-06-10 15:32:34,946 - INFO - query: [CREATE OR REPLACE TABLE emp_tot_hrs_spent AS SELECT e.essn, d.dependent_name, w....]
+2024-06-10 15:32:35,947 - INFO - query execution done
+2024-06-10 15:32:35,947 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_tot_hrs_spent AS
+                SELECT e.essn, d.dependent_name, w.pno, SUM(w.hours) AS total_hours_spent
+                FROM EMP_RAW.EMPLOYEE e
+                JOIN EMP_RAW.DEPENDENT d ON e.essn = d.essn
+                JOIN EMP_RAW.WORKS_ON w ON e.essn = w.essn
+                GROUP BY e.essn, d.dependent_name, w.pno;
+            
+2024-06-10 15:32:35,947 - INFO - query: [SELECT * FROM emp_tot_hrs_spent]
+2024-06-10 15:32:36,337 - INFO - query execution done
+2024-06-10 15:32:36,337 - INFO - Executed query: SELECT * FROM emp_tot_hrs_spent
+2024-06-10 15:32:36,337 - INFO - Report generated: emp_tot_hrs_spent.txt
+2024-06-10 15:32:36,337 - INFO - query: [CREATE OR REPLACE TABLE emp_full_details AS SELECT e.essn, e.fname, e.minit, e.l...]
+2024-06-10 15:32:36,527 - INFO - query execution done
+2024-06-10 15:32:36,527 - ERROR - Error executing query: 000904 (42000): 01b4ec50-0001-e208-0005-d4de0003258e: SQL compilation error: error line 4 at position 75
+invalid identifier 'W.TOTAL_HOURS'
+2024-06-10 15:32:36,527 - INFO - query: [SELECT * FROM emp_full_details]
+2024-06-10 15:32:36,637 - INFO - query execution done
+2024-06-10 15:32:36,637 - INFO - Executed query: SELECT * FROM emp_full_details
+2024-06-10 15:32:36,637 - INFO - Report generated: emp_full_details.txt
+2024-06-10 15:32:36,637 - INFO - closed
+2024-06-10 15:32:36,707 - INFO - No async queries seem to be running, deleting session
+2024-06-10 15:46:14,723 - INFO - Snowflake Connector for Python Version: 2.7.4, Python Version: 3.6.7, Platform: Windows-10-10.0.22621-SP0
+2024-06-10 15:46:14,723 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-06-10 15:46:14,723 - INFO - Setting use_openssl_only mode to False
+2024-06-10 15:46:16,036 - INFO - Connected to Snowflake successfully.
+2024-06-10 15:46:16,036 - INFO - query: [CREATE SCHEMA IF NOT EXISTS EMP_PROC]
+2024-06-10 15:46:16,177 - INFO - query execution done
+2024-06-10 15:46:16,177 - INFO - Executed query: CREATE SCHEMA IF NOT EXISTS EMP_PROC
+2024-06-10 15:46:16,177 - INFO - query: [USE SCHEMA EMP_PROC]
+2024-06-10 15:46:16,364 - INFO - query execution done
+2024-06-10 15:46:16,364 - INFO - query: [CREATE OR REPLACE TABLE emp_sal_greater_mngr AS SELECT e1.essn, e1.salary, e1.su...]
+2024-06-10 15:46:17,490 - INFO - query execution done
+2024-06-10 15:46:17,506 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_sal_greater_mngr AS
+                SELECT e1.essn, e1.salary, e1.super_ssn, e2.salary AS mgr_salary
+                FROM EMP_RAW.EMPLOYEE e1
+                JOIN EMP_RAW.EMPLOYEE e2 ON e1.super_ssn = e2.essn
+                WHERE e1.salary > e2.salary;
+            
+2024-06-10 15:46:17,506 - INFO - query: [SELECT * FROM emp_sal_greater_mngr]
+2024-06-10 15:46:17,850 - INFO - query execution done
+2024-06-10 15:46:17,850 - INFO - Executed query: SELECT * FROM emp_sal_greater_mngr
+2024-06-10 15:46:17,850 - INFO - Report generated: emp_sal_greater_mngr.txt
+2024-06-10 15:46:17,850 - INFO - query: [CREATE OR REPLACE TABLE emp_project_dept AS SELECT e.essn, p.pname, d1.dname AS ...]
+2024-06-10 15:46:19,164 - INFO - query execution done
+2024-06-10 15:46:19,164 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_project_dept AS
+                SELECT e.essn, p.pname, d1.dname AS emp_dept_name, d2.dname AS proj_dept_name
+                FROM EMP_RAW.EMPLOYEE e
+                JOIN EMP_RAW.DEPARTMENT d1 ON e.dno = d1.dnumber
+                JOIN EMP_RAW.WORKS_ON w ON e.essn = w.essn
+                JOIN EMP_RAW.PROJECT p ON w.pno = p.pnumber
+                JOIN EMP_RAW.DEPARTMENT d2 ON p.dnum = d2.dnumber
+                WHERE e.dno != p.dnum;
+            
+2024-06-10 15:46:19,164 - INFO - query: [SELECT * FROM emp_project_dept]
+2024-06-10 15:46:19,570 - INFO - query execution done
+2024-06-10 15:46:19,570 - INFO - Executed query: SELECT * FROM emp_project_dept
+2024-06-10 15:46:19,570 - INFO - Report generated: emp_project_dept.txt
+2024-06-10 15:46:19,570 - INFO - query: [CREATE OR REPLACE TABLE emp_dept_least AS SELECT d.dname, d.dnumber, COUNT(e.ess...]
+2024-06-10 15:46:21,056 - INFO - query execution done
+2024-06-10 15:46:21,056 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_dept_least AS
+                SELECT d.dname, d.dnumber, COUNT(e.essn) AS no_of_emp
+                FROM EMP_RAW.DEPARTMENT d
+                LEFT JOIN EMP_RAW.EMPLOYEE e ON d.dnumber = e.dno
+                GROUP BY d.dname, d.dnumber
+                ORDER BY no_of_emp ASC
+                LIMIT 1;
+            
+2024-06-10 15:46:21,056 - INFO - query: [SELECT * FROM emp_dept_least]
+2024-06-10 15:46:21,197 - INFO - query execution done
+2024-06-10 15:46:21,197 - INFO - Executed query: SELECT * FROM emp_dept_least
+2024-06-10 15:46:21,197 - INFO - Report generated: emp_dept_least.txt
+2024-06-10 15:46:21,213 - INFO - query: [CREATE OR REPLACE TABLE emp_tot_hrs_spent AS SELECT e.essn, d.dependent_name, w....]
+2024-06-10 15:46:22,434 - INFO - query execution done
+2024-06-10 15:46:22,434 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_tot_hrs_spent AS
+                SELECT e.essn, d.dependent_name, w.pno, SUM(w.hours) AS total_hours_spent
+                FROM EMP_RAW.EMPLOYEE e
+                JOIN EMP_RAW.DEPENDENT d ON e.essn = d.essn
+                JOIN EMP_RAW.WORKS_ON w ON e.essn = w.essn
+                GROUP BY e.essn, d.dependent_name, w.pno;
+            
+2024-06-10 15:46:22,434 - INFO - query: [SELECT * FROM emp_tot_hrs_spent]
+2024-06-10 15:46:22,841 - INFO - query execution done
+2024-06-10 15:46:22,841 - INFO - Executed query: SELECT * FROM emp_tot_hrs_spent
+2024-06-10 15:46:22,841 - INFO - Report generated: emp_tot_hrs_spent.txt
+2024-06-10 15:46:22,841 - INFO - query: [CREATE OR REPLACE TABLE emp_full_details AS SELECT e.essn, e.fname, e.minit, e.l...]
+2024-06-10 15:46:23,028 - INFO - query execution done
+2024-06-10 15:46:23,028 - ERROR - Error executing query: 000904 (42000): 01b4ec5e-0001-e204-0005-d4de0002f612: SQL compilation error: error line 4 at position 116
+invalid identifier 'DEP.DEPENDENT_SEX'
+2024-06-10 15:46:23,028 - INFO - query: [SELECT * FROM emp_full_details]
+2024-06-10 15:46:23,153 - INFO - query execution done
+2024-06-10 15:46:23,153 - INFO - Executed query: SELECT * FROM emp_full_details
+2024-06-10 15:46:23,153 - INFO - Report generated: emp_full_details.txt
+2024-06-10 15:46:23,153 - INFO - closed
+2024-06-10 15:46:23,216 - INFO - No async queries seem to be running, deleting session
+2024-06-10 15:50:16,301 - INFO - Snowflake Connector for Python Version: 2.7.4, Python Version: 3.6.7, Platform: Windows-10-10.0.22621-SP0
+2024-06-10 15:50:16,301 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-06-10 15:50:16,301 - INFO - Setting use_openssl_only mode to False
+2024-06-10 15:50:17,661 - INFO - Connected to Snowflake successfully.
+2024-06-10 15:50:17,661 - INFO - query: [CREATE SCHEMA IF NOT EXISTS EMP_PROC]
+2024-06-10 15:50:17,786 - INFO - query execution done
+2024-06-10 15:50:17,786 - INFO - Executed query: CREATE SCHEMA IF NOT EXISTS EMP_PROC
+2024-06-10 15:50:17,786 - INFO - query: [USE SCHEMA EMP_PROC]
+2024-06-10 15:50:17,942 - INFO - query execution done
+2024-06-10 15:50:17,942 - INFO - query: [CREATE OR REPLACE TABLE emp_sal_greater_mngr AS SELECT e1.essn, e1.salary, e1.su...]
+2024-06-10 15:50:18,725 - INFO - query execution done
+2024-06-10 15:50:18,725 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_sal_greater_mngr AS
+                SELECT e1.essn, e1.salary, e1.super_ssn, e2.salary AS mgr_salary
+                FROM EMP_RAW.EMPLOYEE e1
+                JOIN EMP_RAW.EMPLOYEE e2 ON e1.super_ssn = e2.essn
+                WHERE e1.salary > e2.salary;
+            
+2024-06-10 15:50:18,725 - INFO - query: [SELECT * FROM emp_sal_greater_mngr]
+2024-06-10 15:50:18,928 - INFO - query execution done
+2024-06-10 15:50:18,928 - INFO - Executed query: SELECT * FROM emp_sal_greater_mngr
+2024-06-10 15:50:18,928 - INFO - Report generated: emp_sal_greater_mngr.txt
+2024-06-10 15:50:18,944 - INFO - query: [CREATE OR REPLACE TABLE emp_project_dept AS SELECT e.essn, p.pname, d1.dname AS ...]
+2024-06-10 15:50:20,258 - INFO - query execution done
+2024-06-10 15:50:20,258 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_project_dept AS
+                SELECT e.essn, p.pname, d1.dname AS emp_dept_name, d2.dname AS proj_dept_name
+                FROM EMP_RAW.EMPLOYEE e
+                JOIN EMP_RAW.DEPARTMENT d1 ON e.dno = d1.dnumber
+                JOIN EMP_RAW.WORKS_ON w ON e.essn = w.essn
+                JOIN EMP_RAW.PROJECT p ON w.pno = p.pnumber
+                JOIN EMP_RAW.DEPARTMENT d2 ON p.dnum = d2.dnumber
+                WHERE e.dno != p.dnum;
+            
+2024-06-10 15:50:20,258 - INFO - query: [SELECT * FROM emp_project_dept]
+2024-06-10 15:50:20,602 - INFO - query execution done
+2024-06-10 15:50:20,602 - INFO - Executed query: SELECT * FROM emp_project_dept
+2024-06-10 15:50:20,602 - INFO - Report generated: emp_project_dept.txt
+2024-06-10 15:50:20,602 - INFO - query: [CREATE OR REPLACE TABLE emp_dept_least AS SELECT d.dname, d.dnumber, COUNT(e.ess...]
+2024-06-10 15:50:21,587 - INFO - query execution done
+2024-06-10 15:50:21,587 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_dept_least AS
+                SELECT d.dname, d.dnumber, COUNT(e.essn) AS no_of_emp
+                FROM EMP_RAW.DEPARTMENT d
+                LEFT JOIN EMP_RAW.EMPLOYEE e ON d.dnumber = e.dno
+                GROUP BY d.dname, d.dnumber
+                ORDER BY no_of_emp ASC
+                LIMIT 1;
+            
+2024-06-10 15:50:21,587 - INFO - query: [SELECT * FROM emp_dept_least]
+2024-06-10 15:50:23,087 - INFO - query execution done
+2024-06-10 15:50:23,087 - INFO - Executed query: SELECT * FROM emp_dept_least
+2024-06-10 15:50:23,087 - INFO - Report generated: emp_dept_least.txt
+2024-06-10 15:50:23,087 - INFO - query: [CREATE OR REPLACE TABLE emp_tot_hrs_spent AS SELECT e.essn, d.dependent_name, w....]
+2024-06-10 15:50:24,182 - INFO - query execution done
+2024-06-10 15:50:24,182 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_tot_hrs_spent AS
+                SELECT e.essn, d.dependent_name, w.pno, SUM(w.hours) AS total_hours_spent
+                FROM EMP_RAW.EMPLOYEE e
+                JOIN EMP_RAW.DEPENDENT d ON e.essn = d.essn
+                JOIN EMP_RAW.WORKS_ON w ON e.essn = w.essn
+                GROUP BY e.essn, d.dependent_name, w.pno;
+            
+2024-06-10 15:50:24,182 - INFO - query: [SELECT * FROM emp_tot_hrs_spent]
+2024-06-10 15:50:24,464 - INFO - query execution done
+2024-06-10 15:50:24,464 - INFO - Executed query: SELECT * FROM emp_tot_hrs_spent
+2024-06-10 15:50:24,464 - INFO - Report generated: emp_tot_hrs_spent.txt
+2024-06-10 15:50:24,464 - INFO - query: [CREATE OR REPLACE TABLE emp_full_details AS SELECT e.*, d.dname, p.pname, p.pnum...]
+2024-06-10 15:50:25,355 - INFO - query execution done
+2024-06-10 15:50:25,355 - INFO - Executed query: 
+                CREATE OR REPLACE TABLE emp_full_details AS
+                SELECT 
+                    e.*, d.dname, p.pname, p.pnumber, p.plocation, w.hours AS total_hours,
+                    de.dependent_name, de.sex AS dependent_sex, de.relationship AS dependent_relation
+                FROM P01_EMP.EMP_RAW.EMPLOYEE e
+                JOIN P01_EMP.EMP_RAW.DEPARTMENT d ON e.dno = d.dnumber
+                JOIN P01_EMP.EMP_RAW.WORKS_ON w ON e.essn = w.essn
+                JOIN P01_EMP.EMP_RAW.PROJECT p ON w.pno = p.pnumber
+                LEFT JOIN P01_EMP.EMP_RAW.DEPENDENT de ON e.essn = de.essn;
+            
+2024-06-10 15:50:25,355 - INFO - query: [SELECT * FROM emp_full_details]
+2024-06-10 15:50:25,559 - INFO - query execution done
+2024-06-10 15:50:25,559 - INFO - Executed query: SELECT * FROM emp_full_details
+2024-06-10 15:50:25,574 - INFO - Report generated: emp_full_details.txt
+2024-06-10 15:50:25,574 - INFO - closed
+2024-06-10 15:50:25,653 - INFO - No async queries seem to be running, deleting session

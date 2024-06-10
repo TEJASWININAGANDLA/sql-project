@@ -1,0 +1,157 @@
+INFO:snowflake.connector.connection:Snowflake Connector for Python Version: 2.7.4, Python Version: 3.6.7, Platform: Windows-10-10.0.22621-SP0
+INFO:snowflake.connector.connection:This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+INFO:snowflake.connector.connection:Setting use_openssl_only mode to False
+INFO:root:Connected to Snowflake successfully.
+INFO:snowflake.connector.cursor:query: [CREATE TABLE IF NOT EXISTS DEPENDENT ("COLUMN1" VARCHAR, "COLUMN2" VARCHAR, "COL...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Table DEPENDENT created successfully.
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('333445555', ' Alice', 'F', ' 1986-04-05', ' Daugh...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('333445555', ' Theodore', 'M', ' 1983-04-05', ' So...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('333445555', ' Joy', 'F', ' 1958-04-05', ' Spouse'...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('987654321', ' Abner', 'M', ' 1942-04-05', ' Spous...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('123456789', ' Michael', 'M', ' 1988-04-05', ' Son...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('123456789', ' Alice', 'M', ' 1988-04-05', ' Daugh...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('123456789', ' Elizabeth', 'M', ' 1967-04-05', ' S...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('753453457', ' Jo', 'F', ' 1958-04-05', ' Daughter...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPENDENT VALUES ('753453457', ' Pep', 'M', ' 1942-04-05', ' son')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [COMMIT]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Ingested 9 rows into table DEPENDENT.
+INFO:snowflake.connector.cursor:query: [CREATE TABLE IF NOT EXISTS DEPARTMENT ("COLUMN1" VARCHAR, "COLUMN2" VARCHAR, "CO...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Table DEPARTMENT created successfully.
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPARTMENT VALUES ('5', 'Research', '333445555', '1988-05-22')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPARTMENT VALUES ('4', 'Administration', '987654321', '1995-05-22')...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPARTMENT VALUES ('1', 'Headquarters', '888665555', '1981-05-22')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPARTMENT VALUES ('6', 'Sales', '117987987', '1980-05-22')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [COMMIT]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Ingested 4 rows into table DEPARTMENT.
+INFO:snowflake.connector.cursor:query: [CREATE TABLE IF NOT EXISTS EMPLOYEE ("COLUMN1" VARCHAR, "COLUMN2" VARCHAR, "COLU...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Table EMPLOYEE created successfully.
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('123456789', 'John', 'B', 'Smith', '1965-01-09', '7...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('333445555', 'Franklin', 'T', 'Wong', '1955-01-09',...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('999887777', 'Alicia', 'J', 'Zelaya', '1968-01-09',...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('987654321', 'Jennifer', 'S', 'Wallace', '1941-01-0...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('666884444', 'Ramesh', 'K', 'Narayan', '1962-01-09'...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('453453453', 'Joyce', 'A', 'English', '1972-01-09',...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('987987987', 'Ahmad', 'V', 'Jabbar', '1969-01-09', ...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('888665555', 'James', 'E', 'Borg', '1937-01-09', '4...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('753453457', 'satya', 'A', 'kumar', '1972-01-09', '...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO EMPLOYEE VALUES ('117987987', 'John', 'V', 'pop', '1969-01-09', '980...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [COMMIT]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Ingested 10 rows into table EMPLOYEE.
+INFO:snowflake.connector.cursor:query: [CREATE TABLE IF NOT EXISTS PROJECT ("COLUMN1" VARCHAR, "COLUMN2" VARCHAR, "COLUM...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Table PROJECT created successfully.
+INFO:snowflake.connector.cursor:query: [INSERT INTO PROJECT VALUES ('1', 'ProductX', 'Bellaire', '5')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO PROJECT VALUES ('2', 'ProductY', 'Sugarland', '5')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO PROJECT VALUES ('3', 'ProductZ', 'Houston', '5')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO PROJECT VALUES ('10', 'Computerization', 'Stafford', '4')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO PROJECT VALUES ('20', 'Reorganization', 'Houston', '1')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO PROJECT VALUES ('30', 'Newbenefits', 'Stafford', '4')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO PROJECT VALUES ('10', 'ProductXYZ', 'Houston', '6')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [COMMIT]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Ingested 7 rows into table PROJECT.
+INFO:snowflake.connector.cursor:query: [CREATE TABLE IF NOT EXISTS DEPT_LOCATIONS ("COLUMN1" VARCHAR, "COLUMN2" VARCHAR)...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Table DEPT_LOCATIONS created successfully.
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPT_LOCATIONS VALUES ('1', ' Houston')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPT_LOCATIONS VALUES ('4', ' Stafford')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPT_LOCATIONS VALUES ('5', ' Bellaire')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPT_LOCATIONS VALUES ('5', ' Sugarland')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPT_LOCATIONS VALUES ('5', ' Houston')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO DEPT_LOCATIONS VALUES ('6', ' New York')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [COMMIT]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Ingested 6 rows into table DEPT_LOCATIONS.
+INFO:snowflake.connector.cursor:query: [CREATE TABLE IF NOT EXISTS WORKS_ON ("COLUMN1" VARCHAR, "COLUMN2" VARCHAR, "COLU...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Table WORKS_ON created successfully.
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('123456789', '1', '32.5')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('123456789', '2', '7.5')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('666884444', '3', '40.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('453453453', '1', '20.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('453453453', '2', '20.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('333445555', '2', '10.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('333445555', '3', '10.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('333445555', '10', '10.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('333445555', '20', '10.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('999887777', '30', '30.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('999887777', '10', '10.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('987987987', '10', '35.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('987987987', '30', '5.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('987654321', '30', '20.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('987654321', '20', '15.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('888665555', '20', NULL)]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('753453457', '20', '10.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('753453457', '30', '30.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('753453457', '10', '10.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('117987987', '30', '5.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [INSERT INTO WORKS_ON VALUES ('117987987', '30', '20.0')]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [COMMIT]
+INFO:snowflake.connector.cursor:query execution done
+INFO:root:Ingested 21 rows into table WORKS_ON.
+INFO:snowflake.connector.connection:closed
+INFO:snowflake.connector.connection:No async queries seem to be running, deleting session
+INFO:root:Snowflake connection closed.

@@ -1,0 +1,44 @@
+ESSN|FNAME|MINIT|LNAME|BDATE|ADDRESS|SEX|SALARY|SUPER_SSN|DNO|DNAME|PNAME|PNUMBER|PLOCATION|TOTAL_HOURS|DEPENDENT_NAME|DEPENDENT_SEX|DEPENDENT_RELATION
+123456789|John|B|Smith|1965-01-09|731 Fondren, Houston, TX|M|30000.00|333445555|5|Research|ProductX|1|Bellaire|32.5| Michael|M| Son
+123456789|John|B|Smith|1965-01-09|731 Fondren, Houston, TX|M|30000.00|333445555|5|Research|ProductX|1|Bellaire|32.5| Alice|M| Daughter
+123456789|John|B|Smith|1965-01-09|731 Fondren, Houston, TX|M|30000.00|333445555|5|Research|ProductX|1|Bellaire|32.5| Elizabeth|M| Spouse
+123456789|John|B|Smith|1965-01-09|731 Fondren, Houston, TX|M|30000.00|333445555|5|Research|ProductY|2|Sugarland|7.5| Michael|M| Son
+123456789|John|B|Smith|1965-01-09|731 Fondren, Houston, TX|M|30000.00|333445555|5|Research|ProductY|2|Sugarland|7.5| Alice|M| Daughter
+123456789|John|B|Smith|1965-01-09|731 Fondren, Houston, TX|M|30000.00|333445555|5|Research|ProductY|2|Sugarland|7.5| Elizabeth|M| Spouse
+666884444|Ramesh|K|Narayan|1962-01-09|975 Fire Oak, Humble, TX|M|38000.00|333445555|5|Research|ProductZ|3|Houston|40.0|None|None|None
+453453453|Joyce|A|English|1972-01-09|5631 Rice, Houston, TX|F|25000.00|333445555|5|Research|ProductX|1|Bellaire|20.0|None|None|None
+453453453|Joyce|A|English|1972-01-09|5631 Rice, Houston, TX|F|25000.00|333445555|5|Research|ProductY|2|Sugarland|20.0|None|None|None
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductY|2|Sugarland|10.0| Alice|F| Daughter
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductY|2|Sugarland|10.0| Theodore|M| Son
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductY|2|Sugarland|10.0| Joy|F| Spouse
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductZ|3|Houston|10.0| Alice|F| Daughter
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductZ|3|Houston|10.0| Theodore|M| Son
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductZ|3|Houston|10.0| Joy|F| Spouse
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|Computerization|10|Stafford|10.0| Alice|F| Daughter
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductXYZ|10|Houston|10.0| Alice|F| Daughter
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|Computerization|10|Stafford|10.0| Theodore|M| Son
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductXYZ|10|Houston|10.0| Theodore|M| Son
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|Computerization|10|Stafford|10.0| Joy|F| Spouse
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|ProductXYZ|10|Houston|10.0| Joy|F| Spouse
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|Reorganization|20|Houston|10.0| Alice|F| Daughter
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|Reorganization|20|Houston|10.0| Theodore|M| Son
+333445555|Franklin|T|Wong|1955-01-09|638 Voss, Houston, TX|M|40000.00|888665555|5|Research|Reorganization|20|Houston|10.0| Joy|F| Spouse
+999887777|Alicia|J|Zelaya|1968-01-09|3321 Castle, Spring, TX|F|25000.00|987654321|4|Administration|Newbenefits|30|Stafford|30.0|None|None|None
+999887777|Alicia|J|Zelaya|1968-01-09|3321 Castle, Spring, TX|F|25000.00|987654321|4|Administration|Computerization|10|Stafford|10.0|None|None|None
+999887777|Alicia|J|Zelaya|1968-01-09|3321 Castle, Spring, TX|F|25000.00|987654321|4|Administration|ProductXYZ|10|Houston|10.0|None|None|None
+987987987|Ahmad|V|Jabbar|1969-01-09|980 Dallas, Houston, TX|M|55000.00|987654321|4|Administration|Computerization|10|Stafford|35.0|None|None|None
+987987987|Ahmad|V|Jabbar|1969-01-09|980 Dallas, Houston, TX|M|55000.00|987654321|4|Administration|ProductXYZ|10|Houston|35.0|None|None|None
+987987987|Ahmad|V|Jabbar|1969-01-09|980 Dallas, Houston, TX|M|55000.00|987654321|4|Administration|Newbenefits|30|Stafford|5.0|None|None|None
+987654321|Jennifer|S|Wallace|1941-01-09|291 Berry, Bellaire, TX|F|43000.00|888665555|4|Administration|Newbenefits|30|Stafford|20.0| Abner|M| Spouse
+987654321|Jennifer|S|Wallace|1941-01-09|291 Berry, Bellaire, TX|F|43000.00|888665555|4|Administration|Reorganization|20|Houston|15.0| Abner|M| Spouse
+888665555|James|E|Borg|1937-01-09|450 Stone, Houston, TX|M|55000.00|None|1|Headquarters|Reorganization|20|Houston|None|None|None|None
+753453457|satya|A|kumar|1972-01-09|5631 Rice, New York, NY|F|25000.00|117987987|6|Sales|Reorganization|20|Houston|10.0| Jo|F| Daughter
+753453457|satya|A|kumar|1972-01-09|5631 Rice, New York, NY|F|25000.00|117987987|6|Sales|Reorganization|20|Houston|10.0| Pep|M| son
+753453457|satya|A|kumar|1972-01-09|5631 Rice, New York, NY|F|25000.00|117987987|6|Sales|Newbenefits|30|Stafford|30.0| Jo|F| Daughter
+753453457|satya|A|kumar|1972-01-09|5631 Rice, New York, NY|F|25000.00|117987987|6|Sales|Newbenefits|30|Stafford|30.0| Pep|M| son
+753453457|satya|A|kumar|1972-01-09|5631 Rice, New York, NY|F|25000.00|117987987|6|Sales|Computerization|10|Stafford|10.0| Jo|F| Daughter
+753453457|satya|A|kumar|1972-01-09|5631 Rice, New York, NY|F|25000.00|117987987|6|Sales|ProductXYZ|10|Houston|10.0| Jo|F| Daughter
+753453457|satya|A|kumar|1972-01-09|5631 Rice, New York, NY|F|25000.00|117987987|6|Sales|Computerization|10|Stafford|10.0| Pep|M| son
+753453457|satya|A|kumar|1972-01-09|5631 Rice, New York, NY|F|25000.00|117987987|6|Sales|ProductXYZ|10|Houston|10.0| Pep|M| son
+117987987|John|V|pop|1969-01-09|980 Dallas, Siatel, WS|M|55000.00|None|6|Sales|Newbenefits|30|Stafford|5.0|None|None|None
+117987987|John|V|pop|1969-01-09|980 Dallas, Siatel, WS|M|55000.00|None|6|Sales|Newbenefits|30|Stafford|20.0|None|None|None

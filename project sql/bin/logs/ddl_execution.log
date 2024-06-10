@@ -1,0 +1,39 @@
+INFO:snowflake.connector.connection:Snowflake Connector for Python Version: 2.7.4, Python Version: 3.6.7, Platform: Windows-10-10.0.22621-SP0
+INFO:snowflake.connector.connection:This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+INFO:snowflake.connector.connection:Setting use_openssl_only mode to False
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_RAW.EMPLOYEE ( ESSN VARCHAR(9) PRIMARY KEY, FNAME VARCHAR(50), ...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_RAW.DEPARTMENT ( DNUMBER INT PRIMARY KEY, DNAME VARCHAR(50), MG...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_RAW.DEPT_LOCATIONS ( DNUMBER INT, DLOCATION VARCHAR(50), PRIMAR...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_RAW.PROJECT ( PNUMBER INT PRIMARY KEY, PNAME VARCHAR(50), PLOCA...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_RAW.WORKS_ON ( ESSN VARCHAR(9), PNO INT, HOURS DECIMAL(4, 1), P...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_RAW.DEPENDENT ( ESSN VARCHAR(9), DEPENDENT_NAME VARCHAR(50), SE...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_PROC.EMP_SAL_GREATER_MNGR ( ESSN VARCHAR(9), SALARY DECIMAL(10,...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_PROC.EMP_PROJECT_DEPT ( ESSN VARCHAR(9), PNAME VARCHAR(50), EMP...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_PROC.EMP_DEPT_LEAST ( DEPT_NAME VARCHAR(50), DEPT_NO INT, NO_OF...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_PROC.EMP_TOT_HRS_SPENT ( ESSN VARCHAR(9), DEPENDENT_NAME VARCHA...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_PROC.EMP_FULL_DETAILS ( ESSN VARCHAR(9), FNAME VARCHAR(50), MIN...]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.cursor:query: [COMMIT]
+INFO:snowflake.connector.cursor:query execution done
+INFO:snowflake.connector.connection:closed
+INFO:snowflake.connector.connection:No async queries seem to be running, deleting session
+INFO:root:DDL execution successful.
+INFO:snowflake.connector.connection:Snowflake Connector for Python Version: 2.7.4, Python Version: 3.6.7, Platform: Windows-10-10.0.22621-SP0
+INFO:snowflake.connector.connection:This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+INFO:snowflake.connector.connection:Setting use_openssl_only mode to False
+INFO:snowflake.connector.cursor:query: [CREATE TABLE EMP_RAW.EMPLOYEE ( ESSN VARCHAR(9) PRIMARY KEY, FNAME VARCHAR(50), ...]
+INFO:snowflake.connector.cursor:query execution done
+ERROR:root:Error executing DDL: 002002 (42710): 01b4c404-0001-de93-0005-d4de0002413e: SQL compilation error:
+Object 'EMP_RAW.EMPLOYEE' already exists.
+INFO:snowflake.connector.connection:closed
+INFO:snowflake.connector.connection:No async queries seem to be running, deleting session
